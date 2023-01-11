@@ -19,6 +19,11 @@ class TitleSwitcherEnqueue
 
     public function adminMenu() 
     {
-        add_menu_page('Title Switcher', "Title Switcher", 'manage_options', 'title_switcher_menu', array(), 'dashicons-laptop', 8);
+        add_menu_page('Title Switcher', "Title Switcher", 'manage_options', 'title_switcher_menu', array($this, 'adminPage'), 'dashicons-laptop', 8);
+    }
+
+    public function adminPage()
+    {
+        require_once(TITLE_SWITCHER_PATH . 'templates/title_switcher_menu.php');
     }
 }
