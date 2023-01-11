@@ -11,3 +11,13 @@
 
 //Exists if accessed directly
 defined('ABSPATH') or die('Get out of here!');
+
+//Constatns should have a unique name so they don't interfere with other plugins
+//Sets the plugin path constant to the path of of the plugin
+define('TITLE_SWITCHER_PATH', plugin_dir_path(__FILE__));
+
+//Sets the plugin url contsant to the url of the plugin
+define('TITLE_SWITCHER_URL', plugin_dir_url(__FILE__));
+
+//Sets the pligin const to the name of the plugin
+define('TITLE_SWITCHER_SUBS', plugin_basename(__FILE__));
