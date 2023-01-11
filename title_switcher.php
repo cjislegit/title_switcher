@@ -21,3 +21,12 @@ define('TITLE_SWITCHER_URL', plugin_dir_url(__FILE__));
 
 //Sets the pligin const to the name of the plugin
 define('TITLE_SWITCHER_SUBS', plugin_basename(__FILE__));
+
+//Load Classes
+require_once(TITLE_SWITCHER_PATH . 'inc/class/TitleSwitcherEnqueue.php');
+
+//Create new instance of class
+$newEnqueue = new TitleSwitcherEnqueue();
+
+//Call register method
+$newEnqueue->register();
