@@ -24,9 +24,12 @@ define('TITLE_SWITCHER_SUBS', plugin_basename(__FILE__));
 
 //Load Classes
 require_once(TITLE_SWITCHER_PATH . 'inc/class/TitleSwitcherEnqueue.php');
+require_once(TITLE_SWITCHER_PATH . 'inc/class/TitleSwitcher.php');
 
 //Create new instance of class
 $newEnqueue = new TitleSwitcherEnqueue();
+$newTitleSwitcher = new TitleSwitcher();
 
 //Call register method
 $newEnqueue->register();
+$newTitleSwitcher->register();
