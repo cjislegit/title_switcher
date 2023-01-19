@@ -13,6 +13,9 @@ class TitleSwitcherEnqueue
 
     public function enqueue()
     {
+
+        wp_enqueue_style('title_switcher_bootstrap_styles', TITLE_SWITCHER_URL . 'assets/bootstrap.min.css');
+        wp_enqueue_script('title_switcher_bootstrap_scripts', TITLE_SWITCHER_URL . 'assets/bootstrap.bundle.min.js');
         wp_enqueue_style('title_switcher_styles', TITLE_SWITCHER_URL . 'assets/styles.css');
         wp_enqueue_script('title_switcher_scripts', TITLE_SWITCHER_URL . 'assets/scripts.js');
     }
