@@ -1,5 +1,11 @@
 <?php
+ $pages = get_all_page_ids();
 
+ foreach ($pages as $page) {
+    if (get_post_status( $page ) == 'publish') {
+        echo $page;
+    }
+ }
 
 ?>
 
