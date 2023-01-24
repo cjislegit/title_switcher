@@ -33,3 +33,6 @@ $newTitleSwitcher = new TitleSwitcher();
 //Call register method
 $newEnqueue->register();
 $newTitleSwitcher->register();
+
+//Set plublished_pages to array of active page ids
+define('PUBLISHED_PAGES', $newTitleSwitcher->get_all_pages());

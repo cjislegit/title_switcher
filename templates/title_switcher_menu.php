@@ -1,14 +1,3 @@
-<?php
- $pages = get_all_page_ids();
-
- foreach ($pages as $page) {
-    if (get_post_status( $page ) == 'publish') {
-        echo $page;
-    }
- }
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,10 +16,12 @@
                 </tr>
             </thead>
             <tbody class="table-group-divider">
+                <?php foreach (PUBLISHED_PAGES as $id): ?>
                 <tr>
-                    <td class="col">Home</td>
+                    <td class="col"><?= get_the_title($id) ?></td>
                     <td class="col"><input type="text" name="" id=""></td>
                 </tr>
+                <?php endforeach; ?>
             </tbody>
         </table>
         <input type="button" class="btn btn-primary btn-sm d-block" value="Update Title Tags">

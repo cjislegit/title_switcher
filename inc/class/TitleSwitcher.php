@@ -14,4 +14,16 @@ class TitleSwitcher
 
         return $title;
     }
+
+    public function get_all_pages() {
+        $pageIds = get_all_page_ids();
+        $publishedIds = [];
+
+        foreach ($pageIds as $pageId) {
+            if (get_post_status($pageId) === 'publish') {
+                $publishedIds[] = $pageId;
+            }
+        }
+        return $publishedIds;
+    }
 }
