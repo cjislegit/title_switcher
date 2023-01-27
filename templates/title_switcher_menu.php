@@ -1,3 +1,16 @@
+<?php
+global $wpdb;
+
+$titleTagTable = $wpdb->get_results("SELECT * FROM title_switcher");
+
+if ($titleTagTable) {
+    $charset_collate = $wpdb->get_charset_collate();
+    
+    $sql = "CREATE TABLE title_switcher"
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

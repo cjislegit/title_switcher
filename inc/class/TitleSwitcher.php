@@ -2,6 +2,14 @@
 
 class TitleSwitcher
 {
+    function __construct() {
+        function getTable() {
+            global $wpdb;
+            $titleTagTable = $wpdb->get_results("SELECT * FROM title_switcher");
+            echo "test";
+        }
+    }
+
     public function register()
     {
         add_filter('document_title_parts', array($this, 'my_custom_title'));
