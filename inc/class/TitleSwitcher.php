@@ -2,17 +2,32 @@
 
 class TitleSwitcher
 {
-    function __construct() {
-        function getTable() {
-            global $wpdb;
-            $titleTagTable = $wpdb->get_results("SELECT * FROM title_switcher");
-            echo "test";
-        }
-    }
 
     public function register()
     {
         add_filter('document_title_parts', array($this, 'my_custom_title'));
+    }
+
+    public function create_db() 
+    {
+        global $wpdb;
+
+        $titleTagTableName = $wpdb->prefix . "title_switcher";
+
+        $titleTagTable = $wpdb->get_results("SELECT * FROM $titleTagTableName");
+
+        if (!$titleTagTable) {
+            $charset_collate = $wpdb->get_charset_collate();
+            
+            $sql = "CREATE TABLE $titleTagTableName (
+                page_id int NOT NULL,
+                title_tag text,
+                PRIMARY KEY (page_id)
+            ) $charset_collate;";
+
+            require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+            dbDelta($sql);
+        }
     }
     
     public function my_custom_title( $title ) {

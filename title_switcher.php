@@ -35,7 +35,7 @@ $newEnqueue->register();
 $newTitleSwitcher->register();
 
 //Calls create_db method
-$newEnqueue->create_db();
+$newTitleSwitcher->create_db();
 
 //Set plublished_pages to array of active page ids
 define('PUBLISHED_PAGES', $newTitleSwitcher->get_all_pages());
