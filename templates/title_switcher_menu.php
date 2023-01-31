@@ -1,25 +1,3 @@
-<?php
-global $wpdb;
-
-$titleTagTableName = $wpdb->prefix . "title_switcher";
-
-$titleTagTable = $wpdb->get_results("SELECT * FROM $titleTagTableName");
-
-if (!$titleTagTable) {
-    $charset_collate = $wpdb->get_charset_collate();
-    
-    $sql = "CREATE TABLE $titleTagTableName (
-        page_id int NOT NULL,
-        title_tag text,
-        PRIMARY KEY (page_id)
-    ) $charset_collate;";
-
-    require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
-    dbDelta($sql);
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
