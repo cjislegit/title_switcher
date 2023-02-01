@@ -19,7 +19,7 @@
                 <?php foreach (PUBLISHED_PAGES as $id): ?>
                 <tr>
                     <td class="col"><?= get_the_title($id) ?></td>
-                    <td class="col"><input type="text" name="" id=""></td>
+                    <td class="col"><input class="newTitles" type="text" name="" id="<?= $id ?>"></td>
                 </tr>
                 <?php endforeach; ?>
             </tbody>

@@ -1,8 +1,17 @@
 var $j = jQuery.noConflict();
 
 $j(document).ready(function() {
-    $j("#submit").click(function () {
-        console.log('Click');
-    })
-    
+
+    let submit = () => {
+        let newTitles = [];
+        let tempTitles = $j('.newTitles');
+        delete tempTitles.length;
+        Object.values(tempTitles).forEach(element => {
+            console.log(element);
+        });
+    }
+
+    $j("#submit").click(submit);
+
 });
+
