@@ -24,7 +24,7 @@
                 <?php endforeach; ?>
             </tbody>
         </table>
-        <input type="button" class="btn btn-primary btn-sm d-block" value="Update Title Tags">
+        <input type="button" id="submit" class="btn btn-primary btn-sm d-block" value="Update Title Tags">
     </div>
 </body>
 </html>
