@@ -6,9 +6,11 @@ $j(document).ready(function() {
         let newTitles = [];
         let tempTitles = $j('.newTitles');
         delete tempTitles.length;
+        delete tempTitles.prevObject;
         Object.values(tempTitles).forEach(element => {
-            console.log(element);
+           newTitles.push([element.id, element.value]);
         });
+        console.log(newTitles);
     }
 
     $j("#submit").click(submit);
