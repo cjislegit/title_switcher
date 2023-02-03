@@ -40,3 +40,18 @@ $newTitleSwitcher->create_db();
 //Set plublished_pages to array of active page ids
 define('PUBLISHED_PAGES', $newTitleSwitcher->get_all_pages());
 
+//Ajax function
+function update_table()
+{
+    echo 'Ajax call output:';
+
+    echo '<pre>';
+    var_dump($_POST['function']);
+    echo '</pre>';
+ 
+    wp_die();// this is required to terminate immediately and return a proper response
+}
+
+add_action('wp_ajax_update_table', 'update_table'); // for logged in users only
+add_action('wp_ajax_nopriv_update_table', 'update_table'); // for ALL users
+

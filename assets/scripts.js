@@ -11,6 +11,16 @@ $j(document).ready(function() {
            newTitles.push([element.id, element.value]);
         });
         console.log(newTitles);
+
+        var data = {
+            'action'   : 'update_table', // the name of your PHP function!
+            'function' : newTitles,    // a random value we'd like to pass
+            'fileid'   : '7'              // another random value we'd like to pass
+            };
+           
+         jQuery.post(ajaxurl, data, function(response) {
+            jQuery("#receiving_div_id").html(response);
+         });
     }
 
     $j("#submit").click(submit);
