@@ -32,8 +32,5 @@ $title_switcher = $wpdb->prefix . "title_switcher";
         </table>
         <input type="button" id="submit" class="btn btn-primary btn-sm d-block" value="Update Title Tags">
     </div>
-    <div id="receiving_div_id">
-        <p>Nothing loaded yet</p>
-    </div>
 </body>
 </html>
