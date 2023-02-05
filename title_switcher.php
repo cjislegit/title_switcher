@@ -43,11 +43,17 @@ define('PUBLISHED_PAGES', $newTitleSwitcher->get_all_pages());
 //Ajax function
 function update_table()
 {
-    echo 'Ajax call output:';
+    global $wpdb;
+    $table = $wpdb->prefix . "title_switcher";
+    $newTitles = $_POST['function'];
 
-    echo '<pre>';
-    var_dump($_POST['function']);
-    echo '</pre>';
+    foreach($newTitles as $newTitle) {
+        if(count($wpdb->get_results("SELECT * FROM $table WHERE page_id = $newTitle[0]")) > 0) {
+            $wpdb->update($table, array("title_tag" => $newTitle[1]), array("page_id" => $newTitle[0]));
+        } else {
+            $wpdb->insert($table, array("title_tag" => $newTitle[1], "page_id" => $newTitle[0]));
+        }
+    }
  
     wp_die();// this is required to terminate immediately and return a proper response
 }
