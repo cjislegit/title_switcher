@@ -32,8 +32,15 @@ class TitleSwitcher
     
     public function my_custom_title( $title ) {
         // $title is an array of title parts, including one called `title`
+        global $post;
+        global $wpdb;
+        $pageId = $post->ID;
+        $table = $wpdb->prefix . "title_switcher";
 
-        $title['title'] = 'My new title';
+        $newTitleTag = $wpdb->get_var("SELECT title_tag FROM $table WHERE page_id = $pageId");
+
+        $title['title'] = $newTitleTag;
+        unset( $title['site'] );
 
         return $title;
     }
