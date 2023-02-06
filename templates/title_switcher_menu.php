@@ -1,6 +1,7 @@
 <?php
 global $wpdb;
-$title_switcher = $wpdb->prefix . "title_switcher"; 
+$title_switcher = $wpdb->prefix . "title_switcher";
+$postId =  get_posts("post_type=post&numberposts=1&fields=ids");
 
 ?>
 
@@ -22,6 +23,10 @@ $title_switcher = $wpdb->prefix . "title_switcher";
                 </tr>
             </thead>
             <tbody class="table-group-divider">
+                <tr>
+                    <td class="col">Posts</td>
+                    <td class="col"><input class="newTitles" type="text" name="" id="0" value="<?= $wpdb->get_var("SELECT title_tag FROM $title_switcher WHERE page_id = 0"); ?>"></td>
+                </tr>
                 <?php foreach (PUBLISHED_PAGES as $id): ?>
                 <tr>
                     <td class="col"><?= get_the_title($id) ?></td>

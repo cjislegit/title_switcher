@@ -35,7 +35,10 @@ class TitleSwitcher
         global $post;
         global $wpdb;
         $pageId = $post->ID;
+        $postId =  get_posts("post_type=post&numberposts=1&fields=ids");
         $table = $wpdb->prefix . "title_switcher";
+
+        $pageId = $pageId == $postId[0] ? 0 : $pageId;
 
         $newTitleTag = $wpdb->get_var("SELECT title_tag FROM $table WHERE page_id = $pageId");
 
