@@ -1,7 +1,6 @@
 <?php
 global $wpdb;
 $title_switcher = $wpdb->prefix . "title_switcher";
-$postId =  get_posts("post_type=post&numberposts=1&fields=ids");
 
 ?>
 
