@@ -44,8 +44,11 @@ class TitleSwitcher
 
         $newTitleTag = $wpdb->get_var("SELECT title_tag FROM $table WHERE page_id = $pageId");
 
-        $title['title'] = $newTitleTag;
-        unset( $title['site'] );
+        if($newTitleTag) {
+            $title['title'] = $newTitleTag;
+            unset( $title['site'] );
+        }
+        
 
         return $title;
     }
