@@ -27,6 +27,8 @@ class TitleSwitcher
 
             require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
             dbDelta($sql);
+
+            $wpdb->insert($titleTagTableName, array("title_tag" => "Posts", "page_id" => 0));
         }
     }
     
