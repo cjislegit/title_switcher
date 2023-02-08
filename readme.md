@@ -13,7 +13,7 @@ A simple plugin that allows you to write a different title tag for each page.
 
 ## Installation
 
-Download the zip file and upload it to WordPress under the plugins page. Once activated, YouTube Subs will appear under widgets.
+Download the zip file and upload it to WordPress under the plugins page. Once activated, Title Swicher will appear under widgets.
     
 ## Features
 
