@@ -1,6 +1,6 @@
 <?php
 
-class TitleSwitcherAi
+class TitleSwitcher
 {
 
     public function register()

@@ -1,6 +1,6 @@
 <?php
 
-class TitleSwitcherAiEnqueue 
+class TitleSwitcherEnqueue 
 {
     public function register()
     {
