@@ -23,22 +23,22 @@ define('TITLE_SWITCHER_AI_URL', plugin_dir_url(__FILE__));
 define('TITLE_SWITCHER_AI_SUBS', plugin_basename(__FILE__));
 
 //Load Classes
-require_once(TITLE_SWITCHER_AI_PATH . 'inc/class/TitleSwitcherEnqueue.php');
-require_once(TITLE_SWITCHER_AI_PATH . 'inc/class/TitleSwitcher.php');
+require_once(TITLE_SWITCHER_AI_PATH . 'inc/class/TitleSwitcherAiEnqueue.php');
+require_once(TITLE_SWITCHER_AI_PATH . 'inc/class/TitleSwitcherAi.php');
 
 //Create new instance of class
-$newEnqueue = new TitleSwitcherEnqueue();
-$newTitleSwitcher = new TitleSwitcher();
+$newEnqueue = new TitleSwitcherAiEnqueue();
+$newTitleSwitcherAi = new TitleSwitcherAi();
 
 //Call register method
 $newEnqueue->register();
-$newTitleSwitcher->register();
+$newTitleSwitcherAi->register();
 
 //Calls create_db method
-$newTitleSwitcher->create_db();
+$newTitleSwitcherAi->create_db();
 
 //Set plublished_pages to array of active page ids
-define('PUBLISHED_PAGES', $newTitleSwitcher->get_all_pages());
+define('PUBLISHED_PAGES', $newTitleSwitcherAi->get_all_pages());
 
 //Ajax function
 function update_table()
