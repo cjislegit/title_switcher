@@ -44,7 +44,7 @@ define('PUBLISHED_PAGES', $newTitleSwitcherAi->get_all_pages());
 function update_table()
 {
     global $wpdb;
-    $table = $wpdb->prefix . "title_switcher";
+    $table = $wpdb->prefix . "title_switcher_ai";
     $newTitles = $_POST['function'];
 
     foreach($newTitles as $newTitle) {

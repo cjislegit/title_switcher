@@ -1,6 +1,6 @@
 <?php
 global $wpdb;
-$title_switcher = $wpdb->prefix . "title_switcher";
+$title_switcher = $wpdb->prefix . "title_switcher_ai";
 
 ?>
 
