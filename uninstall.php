@@ -6,6 +6,6 @@ if (!defined('WP_UNINSTALL_PLUGIN')) {
 }
 
 global $wpdb;
-$titleTagTableName = $wpdb->prefix . "title_switcher_ai";
+$titleTagTableName = $wpdb->prefix . "title_switcher";
 
 $wpdb->query("DROP TABLE $titleTagTableName");

@@ -12,7 +12,7 @@ class TitleSwitcherAi
     {
         global $wpdb;
 
-        $titleTagTableName = $wpdb->prefix . "title_switcher_ai";
+        $titleTagTableName = $wpdb->prefix . "title_switcher";
 
         $titleTagTable = $wpdb->get_results("SELECT * FROM $titleTagTableName");
 
@@ -38,7 +38,7 @@ class TitleSwitcherAi
         global $wpdb;
         $pageId = $post->ID;
         $postId =  get_posts("post_type=post&numberposts=1&fields=ids");
-        $table = $wpdb->prefix . "title_switcher_ai";
+        $table = $wpdb->prefix . "title_switcher";
 
         $pageId = $pageId == $postId[0] ? 0 : $pageId;
 
